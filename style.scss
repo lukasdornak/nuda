@@ -1,0 +1,106 @@
+$logolWidth: 158px;
+$logolHeight: 57px;
+$logopWidth: 57px;
+$logopHeight: 166px;
+$bodyPadding: 4%;
+
+body {
+    margin: 0px;
+    height: 100vh;
+    color: white;
+    background-color: #191919;
+    padding: $bodyPadding;
+    font-size: 2vh;
+    font-family: 'Montserrat';
+    font-style: thin;
+    box-sizing: border-box;
+}
+
+h2 {
+    font-size: 4vh;
+    font-family: 'Montserrat';
+    font-style: bold;
+}
+
+p {
+    margin-bottom: 7vh;
+}
+
+#content {
+    padding: 5%;
+    display: flex;
+    align-items: center;
+}
+
+#logoNUDA {
+    width: $logolWidth;
+    height: $logolHeight;
+    background-image: url(nuda.svg);
+}
+
+#logoNUDA, #logoNUDNI {
+    background-position: center;
+}
+
+@media screen and (orientation:landscape) {
+    #logoNUDNI {
+        width: $logolWidth;
+        height: $logolHeight;
+        margin-bottom: $bodyPadding;
+        background-image: url(nudni-land.svg);
+    }
+    #content {
+        display: block;
+        width: auto;
+        margin: 0 auto;
+        border: 2vh solid #101010;
+    }
+    #nudni, #nuda {
+        display: inline-block;
+        box-sizing: border-box;
+        width: 49.5%;
+    }
+
+    #nuda {
+        text-align: right;
+        vertical-align: bottom;
+    }
+    #notebook {
+        display: block;
+        max-width: 30vw;
+        margin: 0 auto;
+        margin-top: -20vw;
+        margin-bottom: -10vw;
+    }
+}
+
+@media screen and (orientation:portrait) {
+    #nudni, #nuda {
+        padding-left: 10%;
+        box-sizing: border-box;
+    }
+
+    #logoNUDNI {
+        display: inline-block;
+        vertical-align: top;
+        width: $logopWidth;
+        height: $logopHeight;
+        margin-right: $bodyPadding;
+        background-image: url(nudni-port.svg);
+    }
+
+    #content {
+        display: inline-block;
+        box-sizing: border-box;
+        width: calc(90% - #{$logopWidth} - #{$bodyPadding});
+        margin-left: 4%;
+        margin: 0 auto;
+        border: 2vh solid #101010;
+    }
+    #notebook {
+        display: block;
+        max-width: 60vw;
+        margin: 0 auto;
+        margin-bottom: -15vw;
+    }
+}
